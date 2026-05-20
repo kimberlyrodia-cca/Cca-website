@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal Board™. Social Visibility Dashboard | The Cosmic Change Agency | Kimberly Rodia</title>
+<meta name="description" content="The Signal Board™ is the social visibility dashboard built for the trust density era. Track your Topic DNA™, monitor platform signals, manage outreach, and see exactly where your gaps are in real time. By Kimberly Rodia, The Cosmic Change Agency.">
+<meta name="author" content="Kimberly Rodia">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thecosmicchangeagency.com/signal-board">
+<meta property="og:title" content="The Signal Board™ | Social Visibility Dashboard | The Cosmic Change Agency">
+<meta property="og:description" content="Track your Topic DNA™. Monitor your platform signals. See exactly where your gaps are. Built for the trust density era.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecosmicchangeagency.com/signal-board">
+<meta property="og:site_name" content="The Cosmic Change Agency">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@kimberlyrodia">
+<meta property="og:image" content="https://thecosmicchangeagency.com/og-signal-board.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Signal Board. Your visibility. Your conversations. Your Topic DNA. One place.">
+<meta name="twitter:image" content="https://thecosmicchangeagency.com/og-signal-board.png">
+<meta name="geo.region" content="US-OH">
+<meta name="geo.placename" content="Cleveland, Ohio">
+<meta name="geo.position" content="41.4993;-81.6944">
+<meta name="ICBM" content="41.4993, -81.6944">
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CCVDVE5VL7"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-CCVDVE5VL7');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@400;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+ --navy: #0D1520;
+ --navy-mid: #111c2a;
+ --navy-light: #162236;
+ --gold: #c9a96e;
+ --gold-light: #e0c99a;
+ --cream: #F5EDD8;
+ --cream-dim: rgba(245,237,216,0.7);
+ --gold-faint: rgba(201,169,110,0.12);
+ --gold-border: rgba(201,169,110,0.3);
+ --signal-green: #4ade80;
+ --signal-green-faint: rgba(74,222,128,0.08);
+ --signal-amber: #fbbf24;
+ --signal-red: #f87171;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+ background: var(--navy);
+ color: var(--cream);
+ font-family: 'Libre Baskerville', serif;
+ line-height: 1.65;
+ overflow-x: hidden;
+ font-size: 15px;
+}
+.label {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 4px;
+ text-transform: uppercase;
+ color: var(--gold);
+}
+h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+.gold { color: var(--gold); }
+
+/* NAV */
+nav {
+ position: fixed;
+ top: 0; left: 0; right: 0;
+ z-index: 100;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 40px;
+ background: rgba(13,21,32,0.97);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid var(--gold-border);
+}
+.nav-logo {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 13px;
+ font-weight: 800;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+ text-decoration: none;
+}
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--cream);
+ text-decoration: none;
+ opacity: 0.7;
+ transition: opacity 0.2s, color 0.2s;
+ white-space: nowrap;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+.nav-cta {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--navy);
+ background: var(--gold);
+ padding: 9px 20px;
+ text-decoration: none;
+ transition: background 0.2s;
+ white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+.nav-hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ padding: 4px;
+ background: none;
+ border: none;
+}
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); }
+.nav-drawer {
+ display: none;
+ position: fixed;
+ top: 57px; left: 0; right: 0;
+ background: rgba(13,21,32,0.99);
+ border-bottom: 1px solid var(--gold-border);
+ padding: 24px 32px;
+ z-index: 99;
+ flex-direction: column;
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer a {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 13px;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--cream);
+ text-decoration: none;
+ padding: 14px 0;
+ border-bottom: 1px solid var(--gold-border);
+ opacity: 0.8;
+ transition: color 0.2s;
+}
+.nav-drawer a:last-child { border-bottom: none; }
+.nav-drawer a:hover { color: var(--gold); opacity: 1; }
+
+/* HERO */
+#hero {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 140px 64px 100px;
+ position: relative;
+ overflow: hidden;
+ background: var(--navy);
+}
+.hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 80px;
+ align-items: center;
+ max-width: 1200px;
+}
+.hero-eyebrow { margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); opacity: 0.6; }
+.hero-title { font-size: clamp(48px, 6vw, 80px); font-weight: 900; color: var(--cream); margin-bottom: 12px; }
+.hero-title em { color: var(--gold); font-style: italic; }
+.hero-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2vw, 22px); color: var(--gold); margin-bottom: 32px; line-height: 1.5; }
+.hero-body { font-size: 15px; color: var(--cream-dim); max-width: 520px; line-height: 1.8; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 13px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--navy);
+ background: var(--gold);
+ padding: 16px 36px;
+ text-decoration: none;
+ display: inline-block;
+ transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-secondary {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 13px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--gold);
+ border: 1px solid var(--gold-border);
+ padding: 16px 36px;
+ text-decoration: none;
+ display: inline-block;
+ transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold-light); }
+.gold-rule { width: 56px; height: 2px; background: var(--gold); margin: 20px 0; }
+
+/* MOCK DASHBOARD */
+.dashboard-preview {
+ background: var(--navy-mid);
+ border: 1px solid var(--gold-border);
+ border-top: 3px solid var(--gold);
+ padding: 24px;
+ position: relative;
+ overflow: hidden;
+}
+.dashboard-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+ padding-bottom: 16px;
+ border-bottom: 1px solid var(--gold-border);
+}
+.dashboard-title {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 12px;
+ font-weight: 800;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+}
+.signal-dot {
+ width: 8px; height: 8px;
+ border-radius: 50%;
+ background: var(--signal-green);
+ display: inline-block;
+ margin-right: 6px;
+ animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+ 0%, 100% { opacity: 1; }
+ 50% { opacity: 0.3; }
+}
+.dashboard-live {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 10px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--signal-green);
+}
+.dash-metrics {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 8px;
+ margin-bottom: 16px;
+}
+.dash-metric {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ padding: 12px 14px;
+ text-align: center;
+}
+.dash-metric-num {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 28px;
+ font-weight: 900;
+ color: var(--gold);
+ line-height: 1;
+ display: block;
+}
+.dash-metric-label {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--cream-dim);
+ margin-top: 4px;
+}
+.dash-topic-dna {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ border-left: 3px solid var(--gold);
+ padding: 14px 16px;
+ margin-bottom: 12px;
+}
+.dash-section-label {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 10px;
+}
+.dna-pills {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 6px;
+}
+.dna-pill {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ padding: 4px 10px;
+ border: 1px solid var(--gold-border);
+ color: var(--cream-dim);
+}
+.dna-pill.active {
+ background: var(--gold-faint);
+ border-color: var(--gold);
+ color: var(--gold);
+}
+.dash-signals {
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ margin-bottom: 12px;
+}
+.dash-signal-row {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ padding: 10px 14px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 12px;
+}
+.signal-platform {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--gold);
+ min-width: 70px;
+}
+.signal-text {
+ font-size: 11px;
+ color: var(--cream-dim);
+ flex: 1;
+ line-height: 1.4;
+}
+.signal-badge {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ padding: 3px 8px;
+ white-space: nowrap;
+}
+.signal-badge.hot { background: rgba(74,222,128,0.15); color: var(--signal-green); border: 1px solid rgba(74,222,128,0.3); }
+.signal-badge.warm { background: rgba(251,191,36,0.1); color: var(--signal-amber); border: 1px solid rgba(251,191,36,0.3); }
+.signal-badge.gap { background: rgba(248,113,113,0.1); color: var(--signal-red); border: 1px solid rgba(248,113,113,0.3); }
+.dash-gap-bar { margin-top: 4px; }
+.gap-bar-track { height: 3px; background: rgba(201,169,110,0.15); border-radius: 2px; overflow: hidden; }
+.gap-bar-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width 1s ease; }
+
+/* SECTIONS */
+section { padding: 100px 64px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 60px; }
+.section-header h2 { font-size: clamp(36px, 4vw, 54px); color: var(--cream); margin-top: 12px; }
+.section-header h2 em { color: var(--gold); }
+
+/* THE SHIFT. why now */
+#the-shift { background: var(--navy-mid); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+.shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.shift-text p { color: var(--cream-dim); font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+.shift-verified {
+ background: var(--signal-green-faint);
+ border: 1px solid rgba(74,222,128,0.25);
+ border-left: 4px solid var(--signal-green);
+ padding: 20px 24px;
+ margin: 24px 0;
+ display: flex;
+ align-items: center;
+ gap: 14px;
+}
+.shift-verified .check { font-size: 20px; flex-shrink: 0; }
+.shift-verified p { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--signal-green); margin: 0; }
+.algo-cluster {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ padding: 28px;
+}
+.cluster-title {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 16px;
+}
+.cluster-item {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ padding: 10px 0;
+ border-bottom: 1px solid var(--gold-border);
+}
+.cluster-item:last-child { border-bottom: none; }
+.cluster-num {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 22px;
+ font-weight: 900;
+ color: var(--gold);
+ opacity: 0.3;
+ line-height: 1;
+ min-width: 28px;
+}
+.cluster-label { font-size: 14px; color: var(--cream-dim); }
+.cluster-label strong { color: var(--cream); }
+
+/* WHAT IT TRACKS */
+#what-it-tracks { background: var(--navy); }
+.tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--gold-border); }
+.track-card {
+ background: var(--navy);
+ padding: 36px 28px;
+ border-right: 1px solid var(--gold-border);
+ border-bottom: 1px solid var(--gold-border);
+ transition: background 0.2s;
+ position: relative;
+}
+.track-card:hover { background: var(--navy-light); }
+.track-card:nth-child(3n) { border-right: none; }
+.track-card:nth-child(4), .track-card:nth-child(5), .track-card:nth-child(6) { border-bottom: none; }
+.track-icon {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 44px;
+ font-weight: 900;
+ color: var(--gold);
+ opacity: 0.15;
+ line-height: 1;
+ margin-bottom: 20px;
+}
+.track-card h3 { font-size: 20px; color: var(--gold); margin-bottom: 10px; }
+.track-card p { font-size: 14px; color: var(--cream-dim); line-height: 1.75; margin-bottom: 16px; }
+.track-card ul { list-style: none; }
+.track-card ul li {
+ font-size: 13px;
+ color: var(--cream-dim);
+ padding: 6px 0 6px 20px;
+ position: relative;
+ border-top: 1px solid rgba(201,169,110,0.1);
+}
+.track-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 11px; }
+
+/* TOPIC DNA */
+#topic-dna { background: var(--navy-mid); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+.dna-explainer { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+.dna-text p { color: var(--cream-dim); font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+.dna-quote {
+ font-family: 'Playfair Display', serif;
+ font-style: italic;
+ font-size: clamp(18px, 2vw, 24px);
+ color: var(--cream);
+ border-left: 3px solid var(--gold);
+ padding-left: 24px;
+ margin: 24px 0;
+ line-height: 1.6;
+}
+.dna-visual {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ padding: 32px;
+}
+.dna-visual-title {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 20px;
+}
+.dna-strand {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ margin-bottom: 24px;
+}
+.dna-strand-row {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+.dna-strand-label {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--cream-dim);
+ min-width: 110px;
+}
+.dna-strand-bar {
+ flex: 1;
+ height: 6px;
+ background: rgba(201,169,110,0.1);
+ border-radius: 3px;
+ overflow: hidden;
+}
+.dna-strand-fill {
+ height: 100%;
+ background: linear-gradient(90deg, var(--gold), var(--gold-light));
+ border-radius: 3px;
+}
+.dna-strand-pct {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 12px;
+ font-weight: 700;
+ color: var(--gold);
+ min-width: 32px;
+ text-align: right;
+}
+.dna-insight {
+ font-size: 12px;
+ color: var(--gold);
+ font-style: italic;
+ padding-top: 16px;
+ border-top: 1px solid var(--gold-border);
+ line-height: 1.6;
+}
+
+/* PLATFORMS */
+#platforms { background: var(--navy); border-top: 1px solid var(--gold-border); }
+.platforms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.platform-card {
+ background: var(--navy-mid);
+ border: 1px solid var(--gold-border);
+ padding: 28px 20px;
+ text-align: center;
+ transition: transform 0.2s, border-color 0.2s;
+}
+.platform-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+.platform-name {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 16px;
+ font-weight: 800;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--cream);
+ margin-bottom: 8px;
+}
+.platform-desc {
+ font-size: 13px;
+ color: var(--cream-dim);
+ line-height: 1.6;
+ margin-bottom: 16px;
+}
+.platform-signals { list-style: none; text-align: left; }
+.platform-signals li {
+ font-size: 12px;
+ color: var(--cream-dim);
+ padding: 5px 0 5px 16px;
+ position: relative;
+ border-top: 1px solid rgba(201,169,110,0.1);
+}
+.platform-signals li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 10px; }
+.platform-verified {
+ display: inline-block;
+ margin-top: 14px;
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--signal-green);
+ border: 1px solid rgba(74,222,128,0.3);
+ padding: 3px 10px;
+}
+
+/* TRUST DENSITY */
+#trust-density { background: var(--navy-mid); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.trust-stat-card {
+ background: var(--navy);
+ border: 1px solid var(--gold-border);
+ padding: 36px;
+ text-align: center;
+}
+.trust-stat-num {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: clamp(48px, 5vw, 72px);
+ font-weight: 900;
+ color: var(--gold);
+ line-height: 1;
+ margin-bottom: 10px;
+ display: block;
+}
+.trust-stat-label {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--cream-dim);
+ margin-bottom: 8px;
+}
+.trust-stat-note { font-size: 13px; color: var(--gold); font-style: italic; line-height: 1.5; }
+.trust-divider {
+ font-family: 'Playfair Display', serif;
+ font-style: italic;
+ font-size: clamp(18px, 2.5vw, 28px);
+ color: var(--gold);
+ border-left: 3px solid var(--gold);
+ padding: 24px 32px;
+ margin: 40px 0;
+ line-height: 1.5;
+ background: var(--gold-faint);
+ border: 1px solid var(--gold-border);
+ border-left: 4px solid var(--gold);
+}
+
+/* WAITLIST */
+#waitlist { background: var(--navy); padding: 120px 64px; text-align: center; }
+.waitlist-inner { max-width: 760px; margin: 0 auto; }
+.waitlist-inner h2 { font-size: clamp(36px, 5vw, 60px); color: var(--cream); margin: 12px 0 8px; }
+.waitlist-inner h2 em { color: var(--gold); }
+.waitlist-sub { font-style: italic; color: var(--gold); font-size: 20px; margin-bottom: 24px; line-height: 1.5; }
+.waitlist-inner p { color: var(--cream-dim); font-size: 15px; line-height: 1.8; margin-bottom: 40px; }
+.waitlist-options {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ margin-bottom: 48px;
+ text-align: left;
+}
+.waitlist-option {
+ background: var(--navy-mid);
+ border: 1px solid var(--gold-border);
+ padding: 24px 32px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 32px;
+ flex-wrap: wrap;
+ transition: border-color 0.2s;
+}
+.waitlist-option:hover { border-color: var(--gold); }
+.waitlist-option-left { display: flex; flex-direction: column; gap: 4px; }
+.waitlist-option h4 { font-size: 17px; color: var(--cream); margin-bottom: 4px; }
+.waitlist-option p { font-size: 14px; color: var(--cream-dim); margin: 0; }
+.waitlist-link {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--gold);
+ text-decoration: none;
+ white-space: nowrap;
+ border: 1px solid var(--gold-border);
+ padding: 10px 20px;
+ transition: background 0.2s, color 0.2s;
+}
+.waitlist-link:hover { background: var(--gold); color: var(--navy); }
+.founders-note {
+ background: var(--gold-faint);
+ border: 1px solid var(--gold-border);
+ border-left: 4px solid var(--gold);
+ padding: 28px 36px;
+ margin-bottom: 40px;
+ text-align: left;
+}
+.founders-note p { color: var(--cream-dim); font-size: 15px; line-height: 1.75; margin-bottom: 8px; }
+.founders-note p:last-child { margin-bottom: 0; font-style: italic; color: var(--gold); }
+
+/* TIMELINE */
+#timeline { background: var(--navy-mid); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+.timeline-track {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 0;
+ border: 1px solid var(--gold-border);
+ margin-top: 48px;
+}
+.timeline-phase {
+ padding: 32px 24px;
+ border-right: 1px solid var(--gold-border);
+ position: relative;
+}
+.timeline-phase:last-child { border-right: none; }
+.phase-num {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 48px;
+ font-weight: 900;
+ color: var(--gold);
+ opacity: 0.15;
+ line-height: 1;
+ margin-bottom: 16px;
+}
+.phase-status {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ padding: 4px 10px;
+ margin-bottom: 14px;
+ display: inline-block;
+}
+.phase-status.done { color: var(--signal-green); border: 1px solid rgba(74,222,128,0.3); background: rgba(74,222,128,0.08); }
+.phase-status.now { color: var(--signal-amber); border: 1px solid rgba(251,191,36,0.3); background: rgba(251,191,36,0.08); }
+.phase-status.next { color: var(--gold); border: 1px solid var(--gold-border); }
+.phase-title { font-size: 18px; color: var(--cream); margin-bottom: 12px; }
+.phase-items { list-style: none; }
+.phase-items li {
+ font-size: 13px;
+ color: var(--cream-dim);
+ padding: 5px 0 5px 16px;
+ position: relative;
+ border-top: 1px solid rgba(201,169,110,0.1);
+}
+.phase-items li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 10px; }
+
+/* FOOTER */
+footer {
+ background: var(--navy-mid);
+ border-top: 1px solid var(--gold-border);
+ padding: 48px 64px;
+ text-align: center;
+}
+.footer-logo {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 14px;
+ font-weight: 800;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 8px;
+}
+.footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--cream-dim); margin-bottom: 16px; }
+.footer-nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-nav a {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--cream-dim);
+ text-decoration: none;
+ opacity: 0.6;
+ transition: opacity 0.2s, color 0.2s;
+}
+.footer-nav a:hover { opacity: 1; color: var(--gold); }
+.footer-frameworks {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 11px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--gold);
+ opacity: 0.6;
+ margin-bottom: 8px;
+}
+.footer-copy {
+ font-family: 'Barlow Condensed', sans-serif;
+ font-size: 10px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ color: var(--cream-dim);
+ opacity: 0.4;
+}
+
+/* BACK TO TOP */
+#back-to-top {
+ position: fixed;
+ bottom: 32px; right: 32px;
+ width: 48px; height: 48px;
+ background: var(--gold);
+ color: var(--navy);
+ border: none;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transform: translateY(16px);
+ transition: opacity 0.3s, transform 0.3s;
+ z-index: 999;
+ font-size: 20px;
+ font-weight: bold;
+}
+#back-to-top.visible { opacity: 1; transform: translateY(0); }
+#back-to-top:hover { background: var(--gold-light); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.hero-eyebrow, .hero-title, .hero-sub, .hero-body, .hero-actions { animation: fadeUp 0.7s ease both; }
+.hero-eyebrow { animation-delay: 0.1s; }
+.hero-title { animation-delay: 0.2s; }
+.hero-sub { animation-delay: 0.35s; }
+.hero-body { animation-delay: 0.45s; }
+.hero-actions { animation-delay: 0.55s; }
+
+@keyframes pulse-ring {
+ 0% { box-shadow: 0 0 0 0 rgba(201,169,110,0.4); }
+ 70% { box-shadow: 0 0 0 20px rgba(201,169,110,0); }
+ 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+ nav { padding: 16px 24px; }
+ .nav-links { display: none; }
+ .nav-hamburger { display: flex; }
+ section, #waitlist { padding: 80px 24px; }
+ footer { padding: 40px 24px; }
+ .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+ #hero { padding: 120px 24px 80px; }
+ .shift-grid, .dna-explainer, .trust-grid { grid-template-columns: 1fr; gap: 32px; }
+ .tracks-grid { grid-template-columns: 1fr 1fr; }
+ .track-card:nth-child(3n) { border-right: 1px solid var(--gold-border); }
+ .track-card:nth-child(2n) { border-right: none; }
+ .track-card:nth-child(5), .track-card:nth-child(6) { border-bottom: none; }
+ .platforms-grid { grid-template-columns: 1fr 1fr; }
+ .timeline-track { grid-template-columns: 1fr 1fr; }
+ .timeline-phase:nth-child(2n) { border-right: none; }
+ .timeline-phase:nth-child(3), .timeline-phase:nth-child(4) { border-top: 1px solid var(--gold-border); }
+ .waitlist-option { flex-direction: column; align-items: flex-start; gap: 16px; }
+ .dash-metrics { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+ .tracks-grid { grid-template-columns: 1fr; }
+ .platforms-grid { grid-template-columns: 1fr; }
+ .timeline-track { grid-template-columns: 1fr; }
+ .timeline-phase { border-right: none; border-bottom: 1px solid var(--gold-border); }
+ .timeline-phase:last-child { border-bottom: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+  "@type": "SoftwareApplication",
+  "@id": "https://thecosmicchangeagency.com/signal-board#app",
+  "name": "The Signal Board",
+  "alternateName": "The Signal Board™",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "The Signal Board™ is a social visibility dashboard built for the trust density era. Tracks your Topic DNA™, monitors platform signals across LinkedIn, Instagram, Reddit, and Google, manages outreach, and shows you exactly where your gaps are in real time.",
+  "url": "https://thecosmicchangeagency.com/signal-board",
+  "creator": {"@id": "https://thecosmicchangeagency.com/#founder"},
+  "publisher": {"@id": "https://thecosmicchangeagency.com/#business"},
+  "applicationSubCategory": "Social Media Analytics, Digital Presence Management, Visibility Tracking",
+  "featureList": [
+  "Topic DNA™ Tracking",
+  "Cross-Platform Signal Monitoring",
+  "Trust Density Scoring",
+  "Visibility Score Tracking",
+  "Outreach Management",
+  "Gap Detection",
+  "LinkedIn Algorithm Intelligence",
+  "Instagram Original Creator Tracking",
+  "Reddit Community Monitoring",
+  "AI Search Visibility (AEO + GEO)"
+  ],
+  "offers": {
+  "@type": "Offer",
+  "availability": "https://schema.org/PreOrder",
+  "description": "Join the waitlist for founding member access and locked-in pricing.",
+  "priceCurrency": "USD"
+  }
+ },
+ {
+  "@type": "Product",
+  "@id": "https://thecosmicchangeagency.com/signal-board#product",
+  "name": "The Signal Board™",
+  "description": "Social visibility dashboard for the trust density era. Track your Topic DNA™, monitor platform signals, manage outreach, and detect gaps in real time.",
+  "brand": {"@type": "Brand", "name": "The Cosmic Change Agency"},
+  "category": "Digital Presence Software",
+  "image": "https://thecosmicchangeagency.com/signal-board-preview.png"
+ },
+ {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thecosmicchangeagency.com"},
+  {"@type": "ListItem", "position": 2, "name": "The Signal Board™", "item": "https://thecosmicchangeagency.com/signal-board"}
+  ]
+ },
+ {
+  "@type": "LocalBusiness",
+  "@id": "https://thecosmicchangeagency.com/#business",
+  "name": "The Cosmic Change Agency",
+  "url": "https://thecosmicchangeagency.com"
+ },
+ {
+  "@type": "Person",
+  "@id": "https://thecosmicchangeagency.com/#founder",
+  "name": "Kimberly Rodia",
+  "jobTitle": "Founder & Digital Presence Strategist",
+  "url": "https://thecosmicchangeagency.com",
+  "sameAs": [
+  "https://www.linkedin.com/in/kimberlyrodia/",
+  "https://www.linkedin.com/company/the-cosmic-change-agency/",
+  "https://www.reddit.com/user/Remarkable-Letter195/"
+  ]
+ },
+ {
+  "@type": "FAQPage",
+  "mainEntity": [
+  {"@type": "Question", "name": "What is The Signal Board?", "acceptedAnswer": {"@type": "Answer", "text": "The Signal Board™ is a social visibility dashboard being built by The Cosmic Change Agency. It tracks your Topic DNA™, monitors platform signals across LinkedIn, Instagram, Reddit, and Google, manages outreach, and shows you exactly where your gaps are in real time. Built for the trust density era."}},
+  {"@type": "Question", "name": "What is Topic DNA?", "acceptedAnswer": {"@type": "Answer", "text": "Topic DNA™ is a proprietary framework that identifies your core content pillars. In the trust density era, platforms categorize people by expertise cluster, not just identity. Topic DNA™ makes your niche machine-readable and helps you own your cluster in every algorithm."}},
+  {"@type": "Question", "name": "What is trust density?", "acceptedAnswer": {"@type": "Answer", "text": "Trust density is a concept coined by Kimberly Rodia describing how the next generation of social algorithms reward content. Not by reach or follower count, but by how deeply an audience believes the person is real. Measured by saves, shares, DMs, watch time, and return engagement."}},
+  {"@type": "Question", "name": "When will The Signal Board be available?", "acceptedAnswer": {"@type": "Answer", "text": "The Signal Board™ is currently in active development. Early access will be granted to waitlist members first, with founding member pricing locked in for those who join before public launch."}},
+  {"@type": "Question", "name": "How do I join The Signal Board waitlist?", "acceptedAnswer": {"@type": "Answer", "text": "Send a direct message to Kimberly Rodia on LinkedIn at linkedin.com/in/kimberlyrodia to join the waitlist. Founding members get locked-in pricing and direct input into the product roadmap."}},
+  {"@type": "Question", "name": "What platforms does The Signal Board track?", "acceptedAnswer": {"@type": "Answer", "text": "The Signal Board™ tracks LinkedIn, Instagram, Reddit, and Google including AI surfaces like ChatGPT, Perplexity, and Google AI Overviews. All in one dashboard, in real time."}}
+  ]
+ }
+ ]
+}
+</script>
+</head>
+<body data-page-type="signal_board">
+
+<!-- NAV -->
+<nav>
+ <a href="index.html" class="nav-logo">The Cosmic Change Agency</a>
+ <ul class="nav-links">
+ <li><a href="index.html#services">Services</a></li>
+ <li><a href="index.html#framework">Framework</a></li>
+ <li><a href="#what-it-tracks">What It Tracks</a></li>
+ <li><a href="#topic-dna">Topic DNA™</a></li>
+ <li><a href="#timeline">Roadmap</a></li>
+ <li><a href="reel-gap.html">The Reel Gap™</a></li>
+ </ul>
+ <div style="display:flex;align-items:center;gap:16px;">
+ <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+ <button class="nav-hamburger" onclick="toggleDrawer()" aria-label="Menu">
+  <span></span><span></span><span></span>
+ </button>
+ </div>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+ <a href="index.html" onclick="closeDrawer()">← Back to CCA</a>
+ <a href="#what-it-tracks" onclick="closeDrawer()">What It Tracks</a>
+ <a href="#topic-dna" onclick="closeDrawer()">Topic DNA™</a>
+ <a href="#the-shift" onclick="closeDrawer()">The Shift</a>
+ <a href="#timeline" onclick="closeDrawer()">Roadmap</a>
+ <a href="#waitlist" onclick="closeDrawer()" style="color:var(--gold);">Join Waitlist</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+ <div class="hero-grid">
+ <div>
+  <div class="hero-eyebrow">
+  <span class="label">The Cosmic Change Agency</span>
+  </div>
+  <h1 class="hero-title">
+  The Signal<br>Board<span style="color:var(--gold);">™</span>
+  </h1>
+  <div class="hero-sub">Your visibility. Your conversations.<br>Your Topic DNA™. One place.</div>
+  <div class="gold-rule"></div>
+  <p class="hero-body">
+  The signals I have been tracking for months are pointing to one clear shift. The internet is moving from content abundance to trust scarcity. Visibility now belongs to the people whose expertise is recognizable. The Signal Board™ was built for exactly this era, and it is ready to run for you now.
+  </p>
+  <div class="hero-actions">
+  <a href="#waitlist" class="btn-primary">Run It For Me</a>
+  <a href="#what-it-tracks" class="btn-secondary">See What It Tracks</a>
+  </div>
+ </div>
+ <!-- MOCK DASHBOARD -->
+ <div class="dashboard-preview">
+  <div class="dashboard-header">
+  <div class="dashboard-title">Signal Board™. Dashboard</div>
+  <div class="dashboard-live"><span class="signal-dot"></span>Collecting Now</div>
+  </div>
+  <div class="dash-metrics">
+  <div class="dash-metric">
+   <span class="dash-metric-num">94</span>
+   <div class="dash-metric-label">Signal Score</div>
+  </div>
+  <div class="dash-metric">
+   <span class="dash-metric-num">7</span>
+   <div class="dash-metric-label">Hot Topics</div>
+  </div>
+  <div class="dash-metric">
+   <span class="dash-metric-num">3</span>
+   <div class="dash-metric-label">Gaps Found</div>
+  </div>
+  </div>
+  <div class="dash-topic-dna">
+  <div class="dash-section-label">Topic DNA™. Active Pillars</div>
+  <div class="dna-pills">
+   <span class="dna-pill active">LinkedIn Algo</span>
+   <span class="dna-pill active">Trust Density</span>
+   <span class="dna-pill active">Digital Presence</span>
+   <span class="dna-pill">AI Search</span>
+   <span class="dna-pill active">Founder-Led</span>
+   <span class="dna-pill">Content Strategy</span>
+  </div>
+  </div>
+  <div class="dash-section-label" style="margin-bottom:8px;">Live Signals. This Week</div>
+  <div class="dash-signals">
+  <div class="dash-signal-row">
+   <div class="signal-platform">Signal 01</div>
+   <div class="signal-text">Topic DNA&#8482; cluster authority building in your space</div>
+   <span class="signal-badge hot">Strong</span>
+  </div>
+  <div class="dash-signal-row">
+   <div class="signal-platform">Signal 02</div>
+   <div class="signal-text">Original voice signals outperforming recycled patterns</div>
+   <span class="signal-badge hot">Strong</span>
+  </div>
+  <div class="dash-signal-row">
+   <div class="signal-platform">Signal 03</div>
+   <div class="signal-text">Three conversation opportunities matched to your pillars</div>
+   <span class="signal-badge warm">Engage</span>
+  </div>
+  <div class="dash-signal-row">
+   <div class="signal-platform">Signal 04</div>
+   <div class="signal-text">Two visibility gaps detected in your priority surfaces</div>
+   <span class="signal-badge gap">Gap</span>
+  </div>
+  </div>
+  <div class="dash-gap-bar">
+  <div class="dash-section-label" style="margin-bottom:6px;">Overall Visibility Score</div>
+  <div class="gap-bar-track"><div class="gap-bar-fill" style="width:72%"></div></div>
+  <div style="display:flex;justify-content:space-between;margin-top:4px;">
+   <span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;color:var(--cream-dim);text-transform:uppercase;letter-spacing:1px;">72 / 100</span>
+   <span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;">+8 this week</span>
+  </div>
+  </div>
+ </div>
+ </div>
+</section>
+
+<!-- THE SHIFT -->
+<section id="the-shift">
+ <div class="section-inner">
+ <div class="shift-grid">
+  <div class="shift-text">
+  <span class="label" style="display:block;margin-bottom:16px;">Why Now</span>
+  <h2 style="font-size:clamp(36px,4vw,54px);color:var(--cream);margin-bottom:20px;line-height:1.15;">The shift is happening.<br><em style="color:var(--gold);font-style:italic;">I have been tracking it.</em></h2>
+  <div class="gold-rule" style="margin-bottom:32px;"></div>
+  <p>For months I have been putting together the context clues. The era of recycled content farms, faceless engagement hacking, and growth at all costs is collapsing.</p>
+  <p>This is not a normal algorithm tweak. The way people are being seen online is fundamentally changing. Your content is becoming training data. Your niche is becoming your Topic DNA&#8482;.</p>
+  <p>The Signal Board&#8482; was built to track exactly this. And to tell you what to do about it, in real time, using the same frameworks I built it on.</p>
+  <p style="font-style:italic;color:var(--gold);margin-top:24px;">2 to 6 week testing trials complete. Models built. Ready to run for you now.</p>
+  </div>
+  <div>
+  <div style="background:var(--gold-faint);border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:24px 28px;">
+   <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--gold);line-height:1.65;margin:0;">Your comments are signals. Your posting patterns are metadata. Your niche is becoming your <strong>Topic DNA&#8482;</strong>. The Signal Board&#8482; makes all of it visible.</p>
+  </div>
+  </div>
+ </div>
+ </div>
+</section>
+
+<!-- WHAT IT TRACKS -->
+<section id="what-it-tracks">
+ <div class="section-inner">
+ <div class="section-header">
+  <span class="label">The Dashboard</span>
+  <h2>What it tracks.<br><em>Everything.</em></h2>
+  <div class="gold-rule"></div>
+  <p style="font-size:16px;color:var(--cream-dim);max-width:640px;margin-top:8px;line-height:1.8;">Most people building a presence online are doing it blind. The Signal Board™ changes that. One place. All platforms. Real time.</p>
+ </div>
+ <div class="tracks-grid">
+  <div class="track-card">
+  <div class="track-icon">01</div>
+  <h3>Topic DNA™ Tracking</h3>
+  <p>Your content fingerprint, live. See which pillars you're building authority in. and which ones are going cold.</p>
+  <ul>
+   <li>Active content pillars scored by frequency + engagement</li>
+   <li>Topic drift alerts when you go off-brand</li>
+   <li>Machine-readability score for each pillar</li>
+   <li>AI discoverability signals tied to your niche</li>
+  </ul>
+  </div>
+  <div class="track-card">
+  <div class="track-icon">02</div>
+  <h3>Cross-Platform Signals</h3>
+  <p>LinkedIn, Instagram, Reddit, and Google. all monitored together. The full picture, not just one feed.</p>
+  <ul>
+   <li>Hot conversations in your space, ranked by relevance</li>
+   <li>Algorithm behavior changes flagged in real time</li>
+   <li>Engagement pattern analysis vs. your posting rhythm</li>
+   <li>Competitor and peer visibility benchmarking</li>
+  </ul>
+  </div>
+  <div class="track-card">
+  <div class="track-icon">03</div>
+  <h3>Visibility Scoring</h3>
+  <p>A live score of your digital presence across every surface. Based on behavior, not vanity metrics.</p>
+  <ul>
+   <li>Overall Visibility Score across all platforms</li>
+   <li>Authority score by topic and platform</li>
+   <li>Search presence: Google, AI Overviews, Perplexity</li>
+   <li>Week-over-week momentum tracking</li>
+  </ul>
+  </div>
+  <div class="track-card">
+  <div class="track-icon">04</div>
+  <h3>Outreach Management</h3>
+  <p>Follow-ups, DMs, and relationship building. tracked in one place so nothing slips through.</p>
+  <ul>
+   <li>Warm leads and conversation pipeline</li>
+   <li>Follow-up reminders and status tracking</li>
+   <li>Engagement opportunities surfaced automatically</li>
+   <li>Relationship signals: who's engaging with you</li>
+  </ul>
+  </div>
+  <div class="track-card">
+  <div class="track-icon">05</div>
+  <h3>Gap Detection</h3>
+  <p>The GAPS™ Framework baked in. See where your presence is strong and where you're invisible.</p>
+  <ul>
+   <li>Gap alerts by platform and content type</li>
+   <li>Missing keywords and search term opportunities</li>
+   <li>Authority vs. visibility mismatch detection</li>
+   <li>Priority action stack: what to fix first</li>
+  </ul>
+  </div>
+  <div class="track-card">
+  <div class="track-icon">06</div>
+  <h3>Trust Density Meter</h3>
+  <p>The new currency. How deeply does your audience believe you're real? We measure it.</p>
+  <ul>
+   <li>Authentic engagement vs. vanity like ratio</li>
+   <li>Save, share, and DM rates weighted heavily</li>
+   <li>Watch time and deep engagement signals</li>
+   <li>Human resonance score by post and platform</li>
+  </ul>
+  </div>
+ </div>
+ </div>
+</section>
+
+<!-- TOPIC DNA -->
+
+
+<!-- PLATFORMS -->
+
+
+<!-- TRUST DENSITY -->
+<section id="trust-density">
+ <div class="section-inner">
+ <div class="section-header">
+  <span class="label">The New Metric</span>
+  <h2>Trust density.<br><em>Not follower count.</em></h2>
+  <div class="gold-rule"></div>
+ </div>
+ <div class="trust-divider">
+  "The next generation of social algorithms will not primarily reward content quality. They will reward trust density. Meaning, how deeply does this audience believe this person is real?"
+  <div style="margin-top:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-style:normal;">, Kimberly Rodia, May 2026</div>
+ </div>
+ <div class="trust-grid">
+  <div class="trust-stat-card">
+  <span class="trust-stat-num">Trust</span>
+  <div class="trust-stat-label">Is the new reach</div>
+  <div class="trust-stat-note">Saves, shares, DMs, and watch time outperform likes in every algorithm update from here forward.</div>
+  </div>
+  <div class="trust-stat-card">
+  <span class="trust-stat-num">Human</span>
+  <div class="trust-stat-label">Wins in the AI era</div>
+  <div class="trust-stat-note">As AI floods every feed with synthetic content, platforms are actively learning to detect and reward human resonance.</div>
+  </div>
+  <div class="trust-stat-card">
+  <span class="trust-stat-num">Niche</span>
+  <div class="trust-stat-label">Beats mass appeal</div>
+  <div class="trust-stat-note">Deep authority in a specific cluster beats broad visibility every time. The Signal Board™ helps you own your cluster.</div>
+  </div>
+  <div class="trust-stat-card">
+  <span class="trust-stat-num">Real</span>
+  <div class="trust-stat-label">Beats polished</div>
+  <div class="trust-stat-note">Lived experience, authentic voice, and recognizable thought patterns outperform overproduced content in every metric that matters now.</div>
+  </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- TIMELINE / ROADMAP -->
+<section id="timeline">
+ <div class="section-inner">
+ <div class="section-header">
+  <span class="label">The Build</span>
+  <h2>Building in public.<br><em>In reel time.</em></h2>
+  <div class="gold-rule"></div>
+  <p style="font-size:16px;color:var(--cream-dim);max-width:640px;margin-top:8px;line-height:1.8;">The Signal Board™ is being built the same way everything at CCA gets built. transparently. You can see every stage of the build, follow along, and get early access before anyone else.</p>
+ </div>
+ <div class="timeline-track">
+  <div class="timeline-phase">
+  <div class="phase-num">01</div>
+  <div class="phase-status done">Complete</div>
+  <h3 class="phase-title">The Framework</h3>
+  <ul class="phase-items">
+   <li>The GAPS™ Framework built</li>
+   <li>Topic DNA™ methodology defined</li>
+   <li>Signal categories mapped</li>
+   <li>Trust density model designed</li>
+  </ul>
+  </div>
+  <div class="timeline-phase">
+  <div class="phase-num">02</div>
+  <div class="phase-status done">Complete</div>
+  <h3 class="phase-title">Testing Trials</h3>
+  <ul class="phase-items">
+   <li>2 to 6 week testing trials complete</li>
+   <li>Frameworks validated across multiple surfaces</li>
+   <li>Models refined and ready to deploy</li>
+   <li>Live client results documented</li>
+  </ul>
+  </div>
+  <div class="timeline-phase">
+  <div class="phase-num">03</div>
+  <div class="phase-status now">Now Building</div>
+  <h3 class="phase-title">The App</h3>
+  <ul class="phase-items">
+   <li>Dashboard UI in development</li>
+   <li>Platform API integrations</li>
+   <li>Topic DNA™ scoring engine</li>
+   <li>Waitlist open. early access perks</li>
+  </ul>
+  </div>
+  <div class="timeline-phase">
+  <div class="phase-num">04</div>
+  <div class="phase-status next">On The Roadmap</div>
+  <h3 class="phase-title">The App Version</h3>
+  <ul class="phase-items">
+   <li>Self-serve dashboard in development</li>
+   <li>Founding member pricing locked in</li>
+   <li>Early access for current clients</li>
+   <li>Your feedback shapes the product</li>
+  </ul>
+  </div>
+ </div>
+ <div style="margin-top:32px; text-align:center;">
+  <a href="reel-gap.html" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--gold-border);padding:12px 28px;display:inline-block;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--navy)';" onmouseout="this.style.background='transparent';this.style.color='var(--gold)';">Read the Full Build Story in The Reel Gap™ →</a>
+ </div>
+ </div>
+</section>
+
+<!-- WAITLIST -->
+<section id="waitlist">
+ <div class="waitlist-inner">
+ <span class="label">Run It For Me</span>
+ <h2>Ready when<br><em>you are.</em></h2>
+ <div class="waitlist-sub">The Signal Board™ is running now.<br>Founding clients get locked-in pricing.</div>
+ <div class="gold-rule" style="margin:0 auto 32px;"></div>
+ <div class="founders-note">
+  <p>The Signal Board™ is being built for people who are already doing the work and want to see exactly what's working. and what isn't. If you're serious about your digital presence, your authority, or your business visibility, this is the tool for you.</p>
+  <p>Founding clients get locked-in pricing and direct input into the product roadmap as the app version develops. That offer goes away once we open more broadly.</p>
+ </div>
+ <div class="waitlist-options">
+  <div class="waitlist-option">
+  <div class="waitlist-option-left">
+   <span class="label">First Choice</span>
+   <h4>Connect on LinkedIn</h4>
+   <p>DM Kimberly directly. Tell her you're in. That's how the waitlist works. a real conversation, not a form.</p>
+  </div>
+  <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="waitlist-link">Message Me →</a>
+  </div>
+  <div class="waitlist-option">
+  <div class="waitlist-option-left">
+   <span class="label">Follow the Build</span>
+   <h4>Follow The Cosmic Change Agency</h4>
+   <p>Every milestone, every update, every signal worth sharing. Live on LinkedIn.</p>
+  </div>
+  <a href="https://www.linkedin.com/company/the-cosmic-change-agency/" target="_blank" class="waitlist-link">Follow on LinkedIn</a>
+  </div>
+  <div class="waitlist-option">
+  <div class="waitlist-option-left">
+   <span class="label">Already A Client?</span>
+   <h4>You are already in.</h4>
+   <p>If you have worked with CCA, you get founding access automatically. Reach out to confirm your spot.</p>
+  </div>
+  <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="waitlist-link">Confirm Your Spot</a>
+  </div>
+ </div>
+ <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-primary" style="font-size:14px;padding:18px 48px;">Start a Conversation</a>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+ <div class="footer-logo">The Cosmic Change Agency</div>
+ <div class="footer-tagline">Find the gap. Close it. Grow.</div>
+ <div class="footer-nav">
+ <a href="index.html">Home</a>
+ <a href="index.html#services">Services</a>
+ <a href="index.html#framework">Framework</a>
+ <a href="index.html#cases">Work</a>
+ <a href="index.html#pricing">Pricing</a>
+ <a href="reel-gap.html">The Reel Gap™</a>
+ <a href="index.html#contact">Contact</a>
+ </div>
+ <div class="footer-frameworks">The GAPS™ · The GAPS™ Audit · Topic DNA™ · The BOTs™ · The Content Engine™ · The Signal Board™</div>
+ <div class="footer-copy">All frameworks USPTO trademark pending · © 2026 The Cosmic Change Agency · Kimberly Rodia · Cleveland, Ohio</div>
+ <div class="footer-copy" style="margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6;opacity:0.35;">LinkedIn, Google, Instagram, Reddit, and Facebook are registered trademarks of their respective owners. The Cosmic Change Agency is not affiliated with, endorsed by, or sponsored by any of these companies.</div>
+</footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+function toggleDrawer() {
+ var d = document.getElementById('nav-drawer');
+ if (d) d.classList.toggle('open');
+}
+function closeDrawer() {
+ var d = document.getElementById('nav-drawer');
+ if (d) d.classList.remove('open');
+}
+var btn = document.getElementById('back-to-top');
+if (btn) {
+ window.addEventListener('scroll', function() {
+ btn.classList.toggle('visible', window.scrollY > 400);
+ });
+}
+// Animate DNA bars on scroll
+var animated = false;
+window.addEventListener('scroll', function() {
+ if (animated) return;
+ var dnaSection = document.getElementById('topic-dna');
+ if (!dnaSection) return;
+ var rect = dnaSection.getBoundingClientRect();
+ if (rect.top < window.innerHeight * 0.8) {
+ animated = true;
+ }
+});
+</script>
+
+
+<!-- ==================== MICROSOFT CLARITY ==================== -->
+<!-- Replace XXXXXXXXXX with your Clarity Project ID from https://clarity.microsoft.com -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "REPLACE_WITH_CLARITY_ID");
+</script>
+
+<!-- ==================== ENHANCED GA4 EVENT TRACKING ==================== -->
+<script>
+(function(){
+  if(typeof gtag === 'undefined') return;
+
+  // ========== PAGE METADATA ==========
+  var pageType = document.body.getAttribute('data-page-type') || (location.pathname.includes('signal-board') ? 'signal_board' : (location.pathname.includes('reel-gap') ? 'reel_gap' : 'homepage'));
+  gtag('event', 'page_view_enhanced', {
+    page_type: pageType,
+    page_referrer: document.referrer || 'direct',
+    page_path: location.pathname
+  });
+
+  // ========== SCROLL DEPTH TRACKING ==========
+  // Tracks 25%, 50%, 75%, 90%, 100% scroll milestones
+  var scrollMarks = {25:false, 50:false, 75:false, 90:false, 100:false};
+  function checkScroll() {
+    var h = document.documentElement;
+    var pct = Math.round(((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100);
+    Object.keys(scrollMarks).forEach(function(mark){
+      if (pct >= parseInt(mark) && !scrollMarks[mark]) {
+        scrollMarks[mark] = true;
+        gtag('event', 'scroll_depth', {
+          scroll_percent: parseInt(mark),
+          page_type: pageType
+        });
+      }
+    });
+  }
+  var scrollTimer;
+  window.addEventListener('scroll', function(){
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(checkScroll, 250);
+  });
+
+  // ========== SECTION VISIBILITY TRACKING ==========
+  // Tracks WHICH sections each visitor actually views (audience interest signals)
+  if ('IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !entry.target.dataset.viewed) {
+          entry.target.dataset.viewed = 'true';
+          var sectionId = entry.target.id || entry.target.getAttribute('data-section') || 'unknown';
+          gtag('event', 'section_view', {
+            section_id: sectionId,
+            page_type: pageType
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('section[id]').forEach(function(s){ sectionObserver.observe(s); });
+  }
+
+  // ========== TIME ON PAGE (engagement quality) ==========
+  var startTime = Date.now();
+  var timeMarks = {30:false, 60:false, 120:false, 300:false};
+  setInterval(function(){
+    var seconds = Math.round((Date.now() - startTime) / 1000);
+    Object.keys(timeMarks).forEach(function(mark){
+      if (seconds >= parseInt(mark) && !timeMarks[mark]) {
+        timeMarks[mark] = true;
+        gtag('event', 'time_on_page', {
+          seconds_engaged: parseInt(mark),
+          page_type: pageType
+        });
+      }
+    });
+  }, 10000);
+
+  // ========== CLICK TRACKING (every meaningful click) ==========
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a, button');
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var text = (link.innerText || link.textContent || '').trim().substring(0, 60);
+    var label = link.getAttribute('data-track') || text;
+
+    // OUTBOUND LINKS (LinkedIn, Reddit, Instagram, Facebook, etc.)
+    if (href && (href.startsWith('http') && !href.includes('thecosmicchangeagency.com'))) {
+      var destination = 'unknown';
+      if (href.includes('linkedin.com')) destination = 'linkedin';
+      else if (href.includes('reddit.com')) destination = 'reddit';
+      else if (href.includes('instagram.com')) destination = 'instagram';
+      else if (href.includes('facebook.com')) destination = 'facebook';
+      else if (href.includes('twitter.com') || href.includes('x.com')) destination = 'twitter';
+
+      gtag('event', 'outbound_click', {
+        link_url: href,
+        link_text: label,
+        destination: destination,
+        page_type: pageType
+      });
+
+      // HIGH-INTENT: clicking LinkedIn DM = lead signal
+      if (destination === 'linkedin' && href.includes('/in/kimberlyrodia')) {
+        gtag('event', 'lead_intent_linkedin_dm', {
+          page_type: pageType,
+          source_section: link.closest('section') ? link.closest('section').id : 'unknown'
+        });
+      }
+    }
+
+    // INTERNAL CTA CLICKS
+    if (link.classList && (link.classList.contains('btn-primary') || link.classList.contains('btn-secondary') || link.classList.contains('contact-link') || link.classList.contains('nav-cta') || link.classList.contains('waitlist-link'))) {
+      gtag('event', 'cta_click', {
+        cta_text: label,
+        cta_type: link.classList.contains('btn-primary') ? 'primary' : 'secondary',
+        page_type: pageType,
+        source_section: link.closest('section') ? link.closest('section').id : 'unknown'
+      });
+    }
+
+    // PRICING TAB CLICKS (which pricing tier interests them)
+    if (link.classList && link.classList.contains('pricing-tab')) {
+      gtag('event', 'pricing_tab_view', {
+        pricing_tier: text,
+        page_type: pageType
+      });
+    }
+
+    // SIGNAL BOARD CTA - highest value
+    if (href === 'signal-board.html' || (text && text.toLowerCase().includes('signal board'))) {
+      gtag('event', 'signal_board_interest', {
+        click_text: label,
+        page_type: pageType,
+        source_section: link.closest('section') ? link.closest('section').id : 'unknown'
+      });
+    }
+  });
+
+  // ========== EXIT INTENT (desktop only) ==========
+  if (window.innerWidth > 768) {
+    var exitTracked = false;
+    document.addEventListener('mouseleave', function(e){
+      if (e.clientY < 5 && !exitTracked) {
+        exitTracked = true;
+        gtag('event', 'exit_intent', {
+          page_type: pageType,
+          seconds_on_page: Math.round((Date.now() - startTime) / 1000)
+        });
+      }
+    });
+  }
+
+  // ========== COPY EVENTS (someone copying your content) ==========
+  document.addEventListener('copy', function(){
+    gtag('event', 'content_copied', {
+      page_type: pageType,
+      selection_length: window.getSelection().toString().length
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
