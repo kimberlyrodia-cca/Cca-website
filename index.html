@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +27,8 @@
 {
  "@context": "https://schema.org",
  "@graph": [
-  {"@type":"LocalBusiness","@id":"https://thecosmicchangeagency.com/#business","name":"The Cosmic Change Agency","url":"https://thecosmicchangeagency.com","telephone":"+13305925746","email":"kimberly@thecosmicchangeagency.com","foundingDate":"2026","founder":{"@type":"Person","name":"Kimberly Rodia"},"address":{"@type":"PostalAddress","addressLocality":"Cleveland","addressRegion":"OH","addressCountry":"US"},"areaServed":{"@type":"Country","name":"United States"},"priceRange":"$49 - $1800","sameAs":["https://www.linkedin.com/in/kimberlyrodia/","https://www.linkedin.com/company/the-cosmic-change-agency/","https://www.instagram.com/thecosmicchangeagency/"]},
-  {"@type":"Person","@id":"https://thecosmicchangeagency.com/#founder","name":"Kimberly Rodia","jobTitle":"Founder & Digital Presence Strategist","url":"https://thecosmicchangeagency.com","email":"kimberly@thecosmicchangeagency.com","sameAs":["https://www.linkedin.com/in/kimberlyrodia/","https://www.instagram.com/kimberlyrodia/","https://www.reddit.com/user/Remarkable-Letter195/"],"worksFor":{"@id":"https://thecosmicchangeagency.com/#business"},"knowsAbout":["Digital Presence Strategy","LinkedIn Optimization","Visibility Audits","Content Strategy","Personal Branding","Career Transition","GTM Strategy","AI Search Optimization","AEO","GEO","The GAPS Framework","Trust Density","Topic DNA","Algorithm Intelligence","Social Signals"]},
+  {"@type":"LocalBusiness","@id":"https://thecosmicchangeagency.com/#business","name":"The Cosmic Change Agency","url":"https://thecosmicchangeagency.com","telephone":"+13305925746","email":"kimberly@thecosmicchangeagency.com","foundingDate":"2026","founder":{"@type":"Person","name":"Kimberly Rodia"},"address":{"@type":"PostalAddress","addressLocality":"Cleveland","addressRegion":"OH","addressCountry":"US"},"areaServed":{"@type":"Country","name":"United States"},"priceRange":"$49 - $1800","sameAs":["https://www.linkedin.com/in/krodia/","https://www.linkedin.com/company/thecosmicchangeagency/","https://www.instagram.com/thecosmicchangeagency/","https://kimberlyrodia.substack.com/"]},
+  {"@type":"Person","@id":"https://thecosmicchangeagency.com/#founder","name":"Kimberly Rodia","jobTitle":"Founder & Digital Presence Strategist","url":"https://thecosmicchangeagency.com","email":"kimberly@thecosmicchangeagency.com","sameAs":["https://www.linkedin.com/in/krodia/","https://www.instagram.com/kimberlyrodia/","https://www.reddit.com/user/Remarkable-Letter195/","https://substack.com/@kimberlyrodia","https://kimberlyrodia.substack.com/"],"worksFor":{"@id":"https://thecosmicchangeagency.com/#business"},"knowsAbout":["Digital Presence Strategy","LinkedIn Optimization","Visibility Audits","Content Strategy","Personal Branding","Career Transition","GTM Strategy","AI Search Optimization","AEO","GEO","The GAPS Framework","Trust Density","Topic DNA","Algorithm Intelligence","Social Signals"]},
   {"@type":"FAQPage","mainEntity":[
    {"@type":"Question","name":"What is The Cosmic Change Agency?","acceptedAnswer":{"@type":"Answer","text":"The Cosmic Change Agency is a digital presence strategy firm founded by Kimberly Rodia. We help businesses and professionals close the gap between their real-world reputation and how they show up online through Visibility Audits, Social Signals Audits, Job Search Kits, and content strategy powered by The GAPS™ Framework."}},
    {"@type":"Question","name":"What is Topic DNA?","acceptedAnswer":{"@type":"Answer","text":"Topic DNA™ is a proprietary framework that identifies your core content pillars. In the trust density era, platforms are categorizing people by expertise cluster. Topic DNA™ makes your niche machine-readable and helps you own your cluster in every algorithm."}},
@@ -212,12 +213,14 @@ section{padding:100px 64px;}
 .contact-options{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;text-align:left;}
 .contact-option{background:var(--navy-mid);border:1px solid var(--gold-border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;transition:border-color 0.2s;}
 .contact-option:hover{border-color:var(--gold);}
-.contact-option-left{display:flex;flex-direction:column;gap:4px;}
+.contact-option.featured-option{border-color:var(--gold);background:rgba(201,169,110,0.05);}
+.contact-option-left{display:flex;flex-direction:column;gap:4px;flex:1;min-width:220px;}
 .contact-option .label{margin-bottom:2px;display:block;}
 .contact-option h4{font-size:18px;color:var(--cream);margin-bottom:4px;}
 .contact-option p{font-size:14px;color:var(--cream-dim);line-height:1.5;margin:0;}
 .contact-option a.contact-link{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;white-space:nowrap;flex-shrink:0;border:1px solid var(--gold-border);padding:10px 20px;transition:background 0.2s,color 0.2s,border-color 0.2s;}
 .contact-option a.contact-link:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+.contact-option-buttons{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
 footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);padding:48px 64px;text-align:center;}
 .footer-logo{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
 .footer-tagline{font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--cream-dim);margin-bottom:4px;}
@@ -238,7 +241,8 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
  .pricing-table.active,.pricing-table.four-col.active{grid-template-columns:1fr;}
  .hero-title{font-size:42px;}.pricing-tabs{flex-wrap:wrap;}
  .contact-option{flex-direction:column;align-items:flex-start;gap:16px;}
- .contact-option a.contact-link{align-self:flex-start;}
+ .contact-option a.contact-link,.contact-option-buttons{align-self:flex-start;}
+ .contact-option-buttons{justify-content:flex-start;}
  .stats-4col{grid-template-columns:1fr 1fr !important;}
  .stats-2col{grid-template-columns:1fr !important;}
  .sb-verified-grid{grid-template-columns:1fr !important;}
@@ -477,7 +481,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
    <p style="font-size:15px;color:var(--cream-dim);line-height:1.8;max-width:500px;margin:0 auto 32px;">The full system built to track your Topic DNA&#8482;, monitor your signals across every surface, and tell you exactly where your gaps are. Running for clients now.</p>
    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
     <a href="signal-board.html" class="btn-primary">See My Board</a>
-    <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-secondary">Join the Waitlist</a>
+    <a href="#contact" class="btn-secondary">Join the Waitlist</a>
    </div>
    <p style="margin-top:24px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.6;">Founding Member Pricing Available &middot; The Cosmic Change Agency</p>
   </div>
@@ -776,12 +780,38 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
   <div class="contact-sub">No intake form. No funnel.</div>
   <p>Just send me a direct message and tell me what's going on. That's how every engagement starts. A real conversation. Nothing in between.</p>
   <div class="contact-options">
-   <div class="contact-option"><div class="contact-option-left"><span class="label">Direct Message</span><h4>Just Say Hi.</h4><p>I am active on all the socials, often sharing free support, content, and views. Chime in. I love that. Or DM me directly. Real conversations only.</p></div><a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="contact-link">Find me anywhere &#8594;</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">LinkedIn</span><h4>Connect with Kimberly</h4><p>Where the #PayAttention series lives. Thought leadership, frameworks, and real work.</p></div><a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="contact-link">linkedin.com/in/kimberlyrodia</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">LinkedIn Company</span><h4>The Cosmic Change Agency</h4><p>Follow the company page for updates, client work, and new service launches.</p></div><a href="https://www.linkedin.com/company/the-cosmic-change-agency/" target="_blank" class="contact-link">Follow on LinkedIn</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">Reddit</span><h4>Find the Conversations</h4><p>Job seekers, founders, SMB owners. The communities where the real questions get asked.</p></div><a href="https://www.reddit.com/user/Remarkable-Letter195/" target="_blank" class="contact-link">u/Remarkable-Letter195</a></div>
+   <div class="contact-option featured-option">
+    <div class="contact-option-left">
+     <span class="label">Substack</span>
+     <h4>Pay Attention</h4>
+     <p>The series where I name the gaps out loud. Read the publication, or follow my profile. No pitch. Just the work.</p>
+    </div>
+    <div class="contact-option-buttons">
+     <a href="https://kimberlyrodia.substack.com/" target="_blank" class="contact-link">Read Pay Attention</a>
+     <a href="https://substack.com/@kimberlyrodia" target="_blank" class="contact-link">Follow Me</a>
+    </div>
+   </div>
+   <div class="contact-option">
+    <div class="contact-option-left">
+     <span class="label">LinkedIn</span>
+     <h4>Connect with Kimberly</h4>
+     <p>Where the #PayAttention series lives. DM me directly, or follow the company page. Whichever feels right.</p>
+    </div>
+    <div class="contact-option-buttons">
+     <a href="https://www.linkedin.com/in/krodia/" target="_blank" class="contact-link">Personal Profile</a>
+     <a href="https://www.linkedin.com/company/thecosmicchangeagency/" target="_blank" class="contact-link">Company Page</a>
+    </div>
+   </div>
+   <div class="contact-option">
+    <div class="contact-option-left">
+     <span class="label">Find Me Anywhere</span>
+     <h4>Pick your platform.</h4>
+     <p>I'm active across the socials, often sharing free support, content, and views. Chime in wherever feels right. Real conversations only.</p>
+    </div>
+    <a href="https://www.reddit.com/user/Remarkable-Letter195/" target="_blank" class="contact-link">Reddit &#8594;</a>
+   </div>
   </div>
-  <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-primary">Just Say Hi</a>
+  <a href="https://www.linkedin.com/in/krodia/" target="_blank" class="btn-primary">Just Say Hi</a>
  </div>
 </section>
 
@@ -800,7 +830,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
     <div class="service-sub">30 minutes. Find your gap. Leave with a plan.</div>
     <p>In 30 minutes we'll identify exactly where your revenue, visibility, or momentum is leaking and what to do about it. No prep needed. Just show up.</p>
     <ul><li>1-on-1 with Kimberly</li><li>Full gap identification across your presence or business</li><li>Priority action stack delivered after the call</li><li>Recorded and shared with you</li></ul>
-    <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-primary" style="display:inline-block;margin-top:20px;">Book My Gap Call</a>
+    <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:20px;">Book My Gap Call</a>
    </div>
    <div class="service-card">
     <span class="label">Strategy</span>
@@ -808,7 +838,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
     <div class="service-sub">For companies whose growth systems are fighting each other.</div>
     <p>Marketing generating leads Sales can't close. Content that doesn't convert. Messaging that means different things to different teams. We find the disconnect and build the system to fix it.</p>
     <ul><li>Full GTM strategy audit and gap analysis</li><li>ICP alignment across marketing and sales</li><li>Messaging and positioning overhaul</li><li>BOTs&#8482; installed to sustain execution over time</li><li>Ongoing advisory available</li></ul>
-    <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
+    <a href="#contact" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
    </div>
    <div class="service-card">
     <span class="label">Fractional Leadership</span>
@@ -816,7 +846,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
     <div class="service-sub">All three. In one person. Without the overhead.</div>
     <p>Senior marketing, revenue, and strategy leadership without the full-time cost. Embedded in your team. Accountable to your outcomes.</p>
     <ul><li>GTM strategy and execution ownership</li><li>Revenue operations and pipeline alignment</li><li>Content and brand strategy leadership</li><li>AI strategy and search visibility</li><li>Team coaching and BOTs&#8482; implementation</li></ul>
-    <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
+    <a href="#contact" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
    </div>
    <div class="service-card">
     <span class="label">Advisory</span>
@@ -824,7 +854,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
     <div class="service-sub">A strategic partner who actually shows up.</div>
     <p>Monthly or quarterly advisory for founders, executives, and business owners who want a trusted voice in their corner. Not a consultant who shows up with a deck. A partner who shows up with answers.</p>
     <ul><li>Monthly strategy sessions</li><li>Async access for questions and quick decisions</li><li>Quarterly gap audits and recalibration</li><li>Priority access to new frameworks and tools</li></ul>
-    <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
+    <a href="#contact" class="btn-secondary" style="display:inline-block;margin-top:20px;">Let's Talk</a>
    </div>
   </div>
  </div>
@@ -837,12 +867,38 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
   <div class="contact-sub">No intake form. No funnel.</div>
   <p>Just send a direct message and tell me what's going on. We'll figure out the rest together. A real conversation. That's how every engagement starts.</p>
   <div class="contact-options">
-   <div class="contact-option"><div class="contact-option-left"><span class="label">Direct Message</span><h4>Just Say Hi.</h4><p>I am active on all the socials, often sharing free support, content, and views. Chime in. I love that. Or DM me directly. Real conversations only.</p></div><a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="contact-link">Find me anywhere &#8594;</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">LinkedIn</span><h4>Connect with Kimberly</h4><p>Real talk. No filter. The gaps get named out loud and the work gets shared as it happens.</p></div><a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="contact-link">linkedin.com/in/kimberlyrodia</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">LinkedIn Company</span><h4>The Cosmic Change Agency</h4><p>Follow the company page for updates, client work, and new service launches.</p></div><a href="https://www.linkedin.com/company/the-cosmic-change-agency/" target="_blank" class="contact-link">Follow on LinkedIn</a></div>
-   <div class="contact-option"><div class="contact-option-left"><span class="label">Reddit</span><h4>Find the Conversations</h4><p>Job seekers, founders, SMB owners. The communities where the real questions get asked.</p></div><a href="https://www.reddit.com/user/Remarkable-Letter195/" target="_blank" class="contact-link">u/Remarkable-Letter195</a></div>
+   <div class="contact-option featured-option">
+    <div class="contact-option-left">
+     <span class="label">Substack</span>
+     <h4>Pay Attention</h4>
+     <p>The series where I name the gaps out loud. Read the publication, or follow my profile. No pitch. Just the work.</p>
+    </div>
+    <div class="contact-option-buttons">
+     <a href="https://kimberlyrodia.substack.com/" target="_blank" class="contact-link">Read Pay Attention</a>
+     <a href="https://substack.com/@kimberlyrodia" target="_blank" class="contact-link">Follow Me</a>
+    </div>
+   </div>
+   <div class="contact-option">
+    <div class="contact-option-left">
+     <span class="label">LinkedIn</span>
+     <h4>Connect with Kimberly</h4>
+     <p>Where the #PayAttention series lives. DM me directly, or follow the company page. Whichever feels right.</p>
+    </div>
+    <div class="contact-option-buttons">
+     <a href="https://www.linkedin.com/in/krodia/" target="_blank" class="contact-link">Personal Profile</a>
+     <a href="https://www.linkedin.com/company/thecosmicchangeagency/" target="_blank" class="contact-link">Company Page</a>
+    </div>
+   </div>
+   <div class="contact-option">
+    <div class="contact-option-left">
+     <span class="label">Find Me Anywhere</span>
+     <h4>Pick your platform.</h4>
+     <p>I'm active across the socials, often sharing free support, content, and views. Chime in wherever feels right. Real conversations only.</p>
+    </div>
+    <a href="https://www.reddit.com/user/Remarkable-Letter195/" target="_blank" class="contact-link">Reddit &#8594;</a>
+   </div>
   </div>
-  <a href="https://www.linkedin.com/in/kimberlyrodia/" target="_blank" class="btn-primary">Just Say Hi</a>
+  <a href="https://www.linkedin.com/in/krodia/" target="_blank" class="btn-primary">Just Say Hi</a>
  </div>
 </section>
 
@@ -851,7 +907,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--gold-border);paddin
  <div class="footer-tagline">Find the gap. Fix it. For good.</div>
  <div class="footer-frameworks">The GAPS&#8482; &middot; The GAPS&#8482; Audit &middot; Topic DNA&#8482; &middot; The BOTs&#8482; &middot; The Content Engine&#8482; &middot; The Signal Board&#8482; &middot; <a href="reel-gap.html" style="color:var(--gold);text-decoration:none;opacity:0.6;">The Reel Gap&#8482;</a></div>
  <div class="footer-copy">All frameworks USPTO trademark pending &middot; &copy; 2026 The Cosmic Change Agency &middot; Kimberly Rodia &middot; Cleveland, Ohio</div>
- <div class="footer-copy" style="margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6;opacity:0.35;">LinkedIn, Google, Instagram, Reddit, and Facebook are registered trademarks of their respective owners. The Cosmic Change Agency is not affiliated with, endorsed by, or sponsored by any of these companies.</div>
+ <div class="footer-copy" style="margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6;opacity:0.35;">LinkedIn, Google, Instagram, Reddit, Substack, and Facebook are registered trademarks of their respective owners. The Cosmic Change Agency is not affiliated with, endorsed by, or sponsored by any of these companies.</div>
 </footer>
 
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
@@ -872,7 +928,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
 </script>
 
 <!-- ==================== MICROSOFT CLARITY ==================== -->
-<!-- Replace XXXXXXXXXX with your Clarity Project ID from https://clarity.microsoft.com -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -886,7 +941,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
 (function(){
   if(typeof gtag === 'undefined') return;
 
-  // ========== PAGE METADATA ==========
   var pageType = document.body.getAttribute('data-page-type') || (location.pathname.includes('signal-board') ? 'signal_board' : (location.pathname.includes('reel-gap') ? 'reel_gap' : 'homepage'));
   gtag('event', 'page_view_enhanced', {
     page_type: pageType,
@@ -894,8 +948,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     page_path: location.pathname
   });
 
-  // ========== SCROLL DEPTH TRACKING ==========
-  // Tracks 25%, 50%, 75%, 90%, 100% scroll milestones
   var scrollMarks = {25:false, 50:false, 75:false, 90:false, 100:false};
   function checkScroll() {
     var h = document.documentElement;
@@ -916,8 +968,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     scrollTimer = setTimeout(checkScroll, 250);
   });
 
-  // ========== SECTION VISIBILITY TRACKING ==========
-  // Tracks WHICH sections each visitor actually views (audience interest signals)
   if ('IntersectionObserver' in window) {
     var sectionObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -934,7 +984,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     document.querySelectorAll('section[id]').forEach(function(s){ sectionObserver.observe(s); });
   }
 
-  // ========== TIME ON PAGE (engagement quality) ==========
   var startTime = Date.now();
   var timeMarks = {30:false, 60:false, 120:false, 300:false};
   setInterval(function(){
@@ -950,7 +999,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     });
   }, 10000);
 
-  // ========== CLICK TRACKING (every meaningful click) ==========
   document.addEventListener('click', function(e){
     var link = e.target.closest('a, button');
     if (!link) return;
@@ -959,13 +1007,13 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     var text = (link.innerText || link.textContent || '').trim().substring(0, 60);
     var label = link.getAttribute('data-track') || text;
 
-    // OUTBOUND LINKS (LinkedIn, Reddit, Instagram, Facebook, etc.)
     if (href && (href.startsWith('http') && !href.includes('thecosmicchangeagency.com'))) {
       var destination = 'unknown';
       if (href.includes('linkedin.com')) destination = 'linkedin';
       else if (href.includes('reddit.com')) destination = 'reddit';
       else if (href.includes('instagram.com')) destination = 'instagram';
       else if (href.includes('facebook.com')) destination = 'facebook';
+      else if (href.includes('substack.com')) destination = 'substack';
       else if (href.includes('twitter.com') || href.includes('x.com')) destination = 'twitter';
 
       gtag('event', 'outbound_click', {
@@ -975,16 +1023,21 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
         page_type: pageType
       });
 
-      // HIGH-INTENT: clicking LinkedIn DM = lead signal
-      if (destination === 'linkedin' && href.includes('/in/kimberlyrodia')) {
+      if (destination === 'linkedin' && href.includes('/in/krodia')) {
         gtag('event', 'lead_intent_linkedin_dm', {
+          page_type: pageType,
+          source_section: link.closest('section') ? link.closest('section').id : 'unknown'
+        });
+      }
+
+      if (destination === 'substack') {
+        gtag('event', 'lead_intent_substack', {
           page_type: pageType,
           source_section: link.closest('section') ? link.closest('section').id : 'unknown'
         });
       }
     }
 
-    // INTERNAL CTA CLICKS
     if (link.classList && (link.classList.contains('btn-primary') || link.classList.contains('btn-secondary') || link.classList.contains('contact-link') || link.classList.contains('nav-cta') || link.classList.contains('waitlist-link'))) {
       gtag('event', 'cta_click', {
         cta_text: label,
@@ -994,7 +1047,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
       });
     }
 
-    // PRICING TAB CLICKS (which pricing tier interests them)
     if (link.classList && link.classList.contains('pricing-tab')) {
       gtag('event', 'pricing_tab_view', {
         pricing_tier: text,
@@ -1002,7 +1054,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
       });
     }
 
-    // SIGNAL BOARD CTA - highest value
     if (href === 'signal-board.html' || (text && text.toLowerCase().includes('signal board'))) {
       gtag('event', 'signal_board_interest', {
         click_text: label,
@@ -1012,7 +1063,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     }
   });
 
-  // ========== EXIT INTENT (desktop only) ==========
   if (window.innerWidth > 768) {
     var exitTracked = false;
     document.addEventListener('mouseleave', function(e){
@@ -1026,7 +1076,6 @@ if(btn){window.addEventListener("scroll",function(){btn.classList.toggle("visibl
     });
   }
 
-  // ========== COPY EVENTS (someone copying your content) ==========
   document.addEventListener('copy', function(){
     gtag('event', 'content_copied', {
       page_type: pageType,
